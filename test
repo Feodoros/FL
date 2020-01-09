@@ -1,0 +1,4 @@
+int da();
+int da(string ok);
+int da(string ok, boolean yes);
+int da(string **ok);

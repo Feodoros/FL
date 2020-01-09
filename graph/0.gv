@@ -1,0 +1,19 @@
+digraph tree {
+node [label = "Function"]; "Function8";
+node [label = "Name"]; "Name1";
+node [label = "int"]; "int0";
+"Name1"->"int0"
+"Function8"->"Name1"
+node [label = "Name"]; "Name3";
+node [label = "da"]; "da2";
+"Name3"->"da2"
+"Function8"->"Name3"
+node [label = "("]; "(4";
+"Function8"->"(4"
+node [label = "Args"]; "Args5";
+"Function8"->"Args5"
+node [label = ")"]; ")6";
+"Function8"->")6"
+node [label = ";"]; ";7";
+"Function8"->";7"
+}

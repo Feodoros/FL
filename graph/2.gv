@@ -1,0 +1,47 @@
+digraph tree {
+node [label = "Function"]; "Function47";
+node [label = "Name"]; "Name26";
+node [label = "int"]; "int25";
+"Name26"->"int25"
+"Function47"->"Name26"
+node [label = "Name"]; "Name28";
+node [label = "da"]; "da27";
+"Name28"->"da27"
+"Function47"->"Name28"
+node [label = "("]; "(29";
+"Function47"->"(29"
+node [label = "Args"]; "Args44";
+node [label = "Arg"]; "Arg35";
+node [label = "Name"]; "Name31";
+node [label = "string"]; "string30";
+"Name31"->"string30"
+"Arg35"->"Name31"
+node [label = "Star"]; "Star32";
+"Arg35"->"Star32"
+node [label = "Name"]; "Name34";
+node [label = "ok"]; "ok33";
+"Name34"->"ok33"
+"Arg35"->"Name34"
+"Args44"->"Arg35"
+node [label = "Arg_"]; "Arg_43";
+node [label = ","]; ",36";
+"Arg_43"->",36"
+node [label = "Name"]; "Name38";
+node [label = "boolean"]; "boolean37";
+"Name38"->"boolean37"
+"Arg_43"->"Name38"
+node [label = "Star"]; "Star39";
+"Arg_43"->"Star39"
+node [label = "Name"]; "Name41";
+node [label = "yes"]; "yes40";
+"Name41"->"yes40"
+"Arg_43"->"Name41"
+node [label = "Arg_"]; "Arg_42";
+"Arg_43"->"Arg_42"
+"Args44"->"Arg_43"
+"Function47"->"Args44"
+node [label = ")"]; ")45";
+"Function47"->")45"
+node [label = ";"]; ";46";
+"Function47"->";46"
+}

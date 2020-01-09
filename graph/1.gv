@@ -1,0 +1,33 @@
+digraph tree {
+node [label = "Function"]; "Function24";
+node [label = "Name"]; "Name10";
+node [label = "int"]; "int9";
+"Name10"->"int9"
+"Function24"->"Name10"
+node [label = "Name"]; "Name12";
+node [label = "da"]; "da11";
+"Name12"->"da11"
+"Function24"->"Name12"
+node [label = "("]; "(13";
+"Function24"->"(13"
+node [label = "Args"]; "Args21";
+node [label = "Arg"]; "Arg19";
+node [label = "Name"]; "Name15";
+node [label = "string"]; "string14";
+"Name15"->"string14"
+"Arg19"->"Name15"
+node [label = "Star"]; "Star16";
+"Arg19"->"Star16"
+node [label = "Name"]; "Name18";
+node [label = "ok"]; "ok17";
+"Name18"->"ok17"
+"Arg19"->"Name18"
+"Args21"->"Arg19"
+node [label = "Arg_"]; "Arg_20";
+"Args21"->"Arg_20"
+"Function24"->"Args21"
+node [label = ")"]; ")22";
+"Function24"->")22"
+node [label = ";"]; ";23";
+"Function24"->";23"
+}
