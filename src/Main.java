@@ -61,21 +61,27 @@ public class Main {
         grammar.buildAll();
         Map<Atom.ANonterminal, Set<Atom>> first = grammar.getFirstSet();
         Map<Atom.ANonterminal, Set<Atom>> follow = grammar.getFollowSet();
-
+        boolean isLL = grammar.checkLLK();
 
         Grammar grammar1 = new Grammar(new ArrayList<>());
-        //A -> S word
+        //START -> A
+        grammar1.add(new Grammar.Rule(new Atom.ANonterminal(new Nonterminal("START")),
+                new ArrayList<>(Collections.singletonList(new Atom.ANonterminal(new Nonterminal("A"))))));
+        //A -> S T
         grammar1.add(new Grammar.Rule(new Atom.ANonterminal(new Nonterminal("A")),
-                new ArrayList<>(Arrays.asList(new Atom.ANonterminal(new Nonterminal("S")), new Atom.AToken(Token.WORD)))));
-        //A -> A word
+                new ArrayList<>(Arrays.asList(new Atom.ANonterminal(new Nonterminal("S")), new Atom.AToken(Token.T)))));
+        //A -> A T
         grammar1.add(new Grammar.Rule(new Atom.ANonterminal(new Nonterminal("A")),
-                new ArrayList<>(Arrays.asList(new Atom.ANonterminal(new Nonterminal("A")), new Atom.AToken(Token.WORD)))));
-        //S -> A star
+                new ArrayList<>(Arrays.asList(new Atom.ANonterminal(new Nonterminal("A")), new Atom.AToken(Token.T)))));
+        //S -> T
         grammar1.add(new Grammar.Rule(new Atom.ANonterminal(new Nonterminal("S")),
-                new ArrayList<>(Arrays.asList(new Atom.ANonterminal(new Nonterminal("A")), new Atom.AToken(Token.STAR)))));
+                new ArrayList<>(Collections.singletonList( new Atom.AToken(Token.T)))));
 
         Grammar grammarWithoutRec = grammar1.redemptionLeftRecursion();
-        Map<Atom.ANonterminal, Set<Atom>> firstWithoutRec = grammar1.getFirstSet();
+
+        grammarWithoutRec.init();
+        grammarWithoutRec.buildAll();
+        boolean isLL1 = grammarWithoutRec.checkLLK();
 
 
 
@@ -97,7 +103,5 @@ public class Main {
         }
     }
 
-    public void checkLLK (Grammar grammar){
 
-    }
 }
